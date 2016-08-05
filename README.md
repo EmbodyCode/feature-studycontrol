@@ -1,4 +1,3 @@
-feature-studycontrol
-====================
-
-A Symfony project created on August 5, 2016, 10:29 pm.
+Feature/Study Control beta version
+Beta project created by Buloichik Artur 05.08.2016
+Information wiil be updated soon.
