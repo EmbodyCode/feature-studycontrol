@@ -9,10 +9,9 @@
                                 <tr>
                                     <th>Имя пользователя</th>
                                     <th>Электронный адрес</th>
-                                    <th>Дата последнего захода</th>
-                                    <th>Фамилия</th>
-                                    <th>Отчество</th>
-                                    <th>Зарегистрирован</th>
+                                    <th>Дата регистрации</th>
+                                    <th>Последний заход на сайт</th>
+                                    <th>Роль</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -20,8 +19,20 @@
                                 <tr> 
                                     <td>{{user.username}}</td>
                                     <td>{{user.email}}</td>
+                                    <td>{{user.CreatedAt |date('d.m.Y')}}</td>
+                                    <td>{{user.lastLogin |date('Y-m-d H:i:s') }}</td>
+                                    {% for role in user.roles %}
+                                        {% if role == "ROLE_SUPER_ADMIN" %}
+                                            <td>Разработчик</td>
+                                        {% endif %}
+                                        {% if role == "ROLE_ADMIN" %}
+                                            <td>Администратор</td>
+                                        {% endif %}
+                                        {% if role == "ROLE_USER" %}
+                                        {% endif %}
+                                    {% endfor %}
                                 </tr>
-                                  {% endfor %}
+                                {% endfor %}
                             </tbody>
                         </table>
                     </div>

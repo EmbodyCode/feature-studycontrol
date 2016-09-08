@@ -63,9 +63,12 @@
                 <div class="col-sm-3 col-md-2 sidebar">
                     <ul class="nav nav-sidebar">
                         <li><a href="/users">Список пользователей</a></li>
-                        <li><a href="/adminpage/reguser">Регистрация нового пользователя</a></li>
+                        {% if is_granted('ROLE_SUPER_ADMIN') %}
+                            <li><a href="/registration">Регистрация нового пользователя</a></li>
+                        {% endif %}
                         <li><a href="/adminpage/editusers">Управление пользователями</a></li>
                         <li><a href="#">Просмотр статистики</a></li>
+                        <li><a href="/logout">Выйти</a></li>
                     </ul>
                 </div>
             </div>

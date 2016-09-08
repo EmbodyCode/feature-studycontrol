@@ -20,6 +20,12 @@ class User extends BaseUser
     protected $id;
     
     /**
+     * @var \DateTime
+     */
+    protected $lastLogin;
+
+
+    /**
      * @ORM\Column(name="createdAt", type="datetime")
      * @var type 
      */
