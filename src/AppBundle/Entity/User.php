@@ -18,10 +18,28 @@ class User extends BaseUser
      * @ORM\GeneratedValue(strategy="AUTO")
      */
     protected $id;
+    
+    /**
+     * @ORM\Column(name="createdAt", type="datetime")
+     * @var type 
+     */
+    private $CreatedAt;
+    
+    public function getCreatedAt()
+    {
+        return $this->CreatedAt;
+    }
+    
+    public function setCreatedAt($CreatedAt)
+    {
+        $this->CreatedAt = $CreatedAt;
+        return $this;
+    }
 
     public function __construct()
     {
         parent::__construct();
         // your own logic
+
     }
 }

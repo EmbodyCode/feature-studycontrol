@@ -13,9 +13,24 @@ class DefaultController extends Controller
      */
     public function indexAction(Request $request)
     {
-        // replace this example code with whatever you need
-        return $this->render('default/index.html.twig', [
-            'base_dir' => realpath($this->getParameter('kernel.root_dir').'/..'),
-        ]);
+        $session = $request->getSession();
+        $user = $this->getUser();
+        $user = $this->get('security.token_storage')->getToken()->getUser();
+        $user->getUsername();
+        return $this->render('AppBundle:Admin:index.html.twig',array(''
+            . 'username' => $user->getUsername()));
+    }
+    
+    /**
+     * @Route("/users", name="users")
+     */
+    public function listUsers()
+    {
+        $userManager = $this->get('fos_user.user_manager');
+        $users = $userManager->findUsers();
+        return $this->render('AppBundle:Admin:users.html.twig',array(''
+            . 'users' => $users));
+        
+        
     }
 }
