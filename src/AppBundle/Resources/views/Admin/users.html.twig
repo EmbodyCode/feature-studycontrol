@@ -7,6 +7,7 @@
                         <table class="table table-striped">
                             <thead>
                                 <tr>
+                                    <th>Управление</th>
                                     <th>Имя пользователя</th>
                                     <th>Электронный адрес</th>
                                     <th>Дата регистрации</th>
@@ -17,6 +18,9 @@
                             <tbody>
                                 {% for user in users %}
                                 <tr> 
+                                    <td><a href="/users/edit/{{user.id}}"><input type="button" value="Тык"></a><a href="/delete/{{user.username}}">
+                                            <input type="button" value ="Удалить">
+                                        </a></td>
                                     <td>{{user.username}}</td>
                                     <td>{{user.email}}</td>
                                     <td>{{user.CreatedAt |date('d.m.Y')}}</td>

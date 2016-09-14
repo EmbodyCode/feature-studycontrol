@@ -1,0 +1,15 @@
+{% extends "AppBundle:Admin:layout.html.twig" %}
+
+{% block containerUsers %}
+    <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+        <h2 class="sub-header">Блокировка пользователя</h2>
+        <form action="{{ path('banuser')}}" method="POST">
+            <label>Имя пользователя</label>
+            <input type="text" name ="username" required autofocus><br>
+            <input type="submit" value="Заблокировать">
+        </form>   
+        {% if msg is defined %}
+            <font color="green">{{msg}}</font>
+        {% endif %}
+    </div>
+{% endblock %}

@@ -1,0 +1,26 @@
+{% extends "AppBundle:Admin:layout.html.twig" %}
+
+{% block containerUsers %}
+    <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+        <h2 class="sub-header">Список заблокированных пользователей </h2>
+        <div class="table-responsive">
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th>Разблокировать</th>
+                        <th>Имя пользователя</th>
+                        <th>Электронный адрес</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for user in users %}
+                        <tr> 
+                            <td><a href="/unban/{{user.id}}"><input type="button" value="Тык" name="unban"></a></td>
+                            <td>{{user.username}}</td>
+                            <td>{{user.email}}</td>
+                        </tr>
+                        {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    {% endblock %}

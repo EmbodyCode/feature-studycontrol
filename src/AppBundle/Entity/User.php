@@ -27,9 +27,9 @@ class User extends BaseUser
 
     /**
      * @ORM\Column(name="createdAt", type="datetime")
-     * @var type 
+     * @var \Datetime $CreatedAt
      */
-    private $CreatedAt;
+    protected $CreatedAt;
     
     public function getCreatedAt()
     {
@@ -46,6 +46,7 @@ class User extends BaseUser
     {
         parent::__construct();
         // your own logic
+        $this->CreatedAt = new \DateTime;
 
     }
 }

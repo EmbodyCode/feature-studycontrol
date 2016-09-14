@@ -51,9 +51,7 @@
                         <li><a href="#">Профиль</a></li>
                         <li><a href="http://vk.com/">Вконтакте</a></li>
                     </ul>
-                    <form class="navbar-form navbar-right">
-                        <input type="text" class="form-control" placeholder="Search...">
-                    </form>
+                  
                 </div>
             </div>
         </nav>
@@ -62,12 +60,12 @@
             <div class="row">
                 <div class="col-sm-3 col-md-2 sidebar">
                     <ul class="nav nav-sidebar">
-                        <li><a href="/users">Список пользователей</a></li>
+                        <li><a href="/users">Управление админ.составом</a></li>
                         {% if is_granted('ROLE_SUPER_ADMIN') %}
-                            <li><a href="/registration">Регистрация нового пользователя</a></li>
+                            <li><a href="/registration">Регистрация администратора</a></li>
                         {% endif %}
-                        <li><a href="/adminpage/editusers">Управление пользователями</a></li>
-                        <li><a href="#">Просмотр статистики</a></li>
+                        <li><a href="/ban">Блокировка пользователя</a></li>
+                        <li><a href="/banlist">Список заблокированных</a></li>
                         <li><a href="/logout">Выйти</a></li>
                     </ul>
                 </div>
